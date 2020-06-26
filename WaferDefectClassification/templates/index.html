@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wafer Defect Classifier</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+    <meta name="theme-color" content="#563d7c">
+
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="../static/css/form_upload.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<form class="form-upload" method="post" enctype="multipart/form-data">
+    <h1 class="h3 mb-3 font-weight-normal">Please upload an image</h1>
+    <input type="file" id="img" name="img" class="form-control" required autofocus>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Classify</button>
+    <br>
+    {% if image_loc %}
+    <img class="mb-4" src="../static/{{image_loc}}" alt="" width="128" height="128">
+    <h3 class="h3 mb-3 font-weight-normal">Classification Summary: {{classification}}</h3>
+
+    {%endif%}
+
+</form>
+</body>
+</html>
